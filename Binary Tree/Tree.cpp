@@ -72,7 +72,33 @@ Node * Tree::dequeue(){
 }
 
 
+int Tree::isEmpty(){
+    return front == rear;
+}
 
+void Tree::LevelOrder(Node *root){
+    Tree q(100);
+
+    cout << root->data <<endl;
+
+    q.enqueue(root);
+
+    while(!q.isEmpty()){
+        root = q.dequeue();
+
+        if(root->lchild){
+            cout << root->lchild->data<<endl;
+            q.enqueue(root->rchild);
+
+        }
+
+        if(root->rchild){
+            cout << root->rchild->data<<endl;
+            q.enqueue(root->rchild);
+        }
+    }
+
+}
 
 int Tree::Height(Node *root){
     int x = 0, y= 0;
