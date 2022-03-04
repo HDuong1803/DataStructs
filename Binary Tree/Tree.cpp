@@ -46,3 +46,73 @@ void Tree::createTree(){
 
     }
 }
+
+
+
+
+
+void Tree::enqueue(Node *x){
+    if (rear+1 % size == front ){
+        cout << "Its already full" <<endl;
+    }else{
+        rear = rear + 1 % size;
+        Q[rear] = x;
+    }
+}
+Node * Tree::dequeue(){
+    Node* data = NULL;
+    if (front == rear){
+        cout << "Queue is empty"<<endl;
+    }else{
+        front = front +1 % size;
+        data = Q[front];
+    }
+
+    return data;
+}
+
+
+
+
+int Tree::Height(Node *root){
+    int x = 0, y= 0;
+    if(root == 0)
+        return 0;
+    x=Height(root ->lchild);
+    x=Height(root->rchild);
+
+    if(x>y)
+        return x+1;
+    else
+        return y+1;
+}
+
+void  Tree::preorder(Node *p){
+    if(p){
+        cout <<p->data << endl;
+        preorder(p->lchild);
+        preorder(p->rchild);
+    }
+}
+
+
+void Tree::inOrder(Node *p){
+    if(p){
+
+        inOrder(p->lchild);
+        cout <<p->data << endl;
+        inOrder(p->rchild);
+    }
+}
+
+void Tree::postOrder(Node *p){
+    if(p){
+
+        postOrder(p->lchild);
+        postOrder(p->rchild);
+        cout <<p->data << endl;
+
+    }
+}
+
+
