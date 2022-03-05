@@ -6,6 +6,7 @@ using namespace std;
 int main()
 {
     Tree q;
+    q.createTree();
     cout <<"Pre-order" << endl;
     q.preorder(q.root);
     cout <<"In-order" << endl;
