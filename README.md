@@ -6,4 +6,5 @@
 * Recursion
 * Queue
 * Stack
+* Hash Map
 
