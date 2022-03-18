@@ -7,4 +7,5 @@
 * Queue
 * Stack
 * Hash Map
+* Divide and Conquer
 
